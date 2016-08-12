@@ -19,6 +19,7 @@ namespace UnityBuilder {
 		public static void Init(){
 			Debug.Log("Showing Unity Builder");
 			UnityBuilder builder = CreateInstance<UnityBuilder>();
+			builder.titleContent.text = "UnityBuilder";
 			builder.Show();
 		}
 
