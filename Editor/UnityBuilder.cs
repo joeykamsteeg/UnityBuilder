@@ -40,7 +40,7 @@ namespace UnityBuilder {
 			GUILayout.BeginVertical();
 
 			GUILayout.Label("Platforms:");
-			this.buildWindows = EditorGUILayout.BeginToggleGroup("Window", this.buildWindows ); EditorGUILayout.EndToggleGroup();
+			this.buildWindows = EditorGUILayout.BeginToggleGroup("Windows", this.buildWindows ); EditorGUILayout.EndToggleGroup();
 			this.buildMac = EditorGUILayout.BeginToggleGroup("MacOS", this.buildMac ); EditorGUILayout.EndToggleGroup();
 			this.buildiOS = EditorGUILayout.BeginToggleGroup("iOS", this.buildiOS ); EditorGUILayout.EndToggleGroup();
 			this.buildAndroid = EditorGUILayout.BeginToggleGroup("Android", this.buildAndroid ); EditorGUILayout.EndToggleGroup();
