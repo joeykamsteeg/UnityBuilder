@@ -80,6 +80,10 @@ namespace UnityBuilder {
 					EditorUtility.RevealInFinder( this.buildLocation );
 				}
 			}
+
+			if( GUILayout.Button("Open Build Folder") ){
+				EditorUtility.RevealInFinder( this.buildLocation );
+			}
 		}
 
 		private void Build( BuilderTarget target, string date ){
