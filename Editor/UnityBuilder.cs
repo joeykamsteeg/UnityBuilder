@@ -14,6 +14,7 @@ namespace UnityBuilder {
 		private bool buildWebGL = false;
 
 		private string buildLocation = "";
+		private bool openFolderAfterBuild = false;
 
 		[MenuItem("Window/Unity Builder")]
 		public static void Init(){
@@ -50,8 +51,10 @@ namespace UnityBuilder {
 
 			GUILayout.Space(20);
 
+			this.openFolderAfterBuild = EditorGUILayout.BeginToggleGroup("Open location after build", this.openFolderAfterBuild ); EditorGUILayout.EndToggleGroup();
+
 			if( GUILayout.Button("Build")){
-				String date = DateTime.Now.ToString("yyyy-m-d hh-mm-ss");
+				String date = DateTime.Now.ToString("yyyy-MM-d hh-mm-ss");
 
 				if( this.buildWindows == true ){
 					this.Build( new BuilderTarget(BuildTarget.StandaloneWindows, "Windows64", ".exe"), date );
@@ -71,6 +74,10 @@ namespace UnityBuilder {
 
 				if( this.buildAndroid == true ){
 					this.Build( new BuilderTarget(BuildTarget.Android, "Android" ), date );
+				}
+
+				if( this.openFolderAfterBuild ){
+					EditorUtility.RevealInFinder( this.buildLocation );
 				}
 			}
 		}
